@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pd_8">8dp</dimen>
+    <dimen name="pd_16">16dp</dimen>
+    <dimen name="list_photo_size">48dp</dimen>
+    <dimen name="list_friend_name">14sp</dimen>
+    <dimen name="list_friend_distance">14sp</dimen>
+    <dimen name="list_friend_rating">14sp</dimen>
+</resources>

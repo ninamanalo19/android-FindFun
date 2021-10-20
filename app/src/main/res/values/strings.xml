@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">FindFriends</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+
+    <string name="list_name_default">Friend Name</string>
+    <string name="list_name">%1$s %2$s</string>
+    <string name="list_distance_default">Friend is 300 km away from you.</string>
+    <string name="list_distance">%1$s is %2$s %3$s away from you.</string>
+    <string name="list_rating_default">4.0</string>
+
 </resources>
