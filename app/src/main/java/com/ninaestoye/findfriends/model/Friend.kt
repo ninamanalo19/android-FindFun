@@ -4,17 +4,18 @@ import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 import com.ninaestoye.findfriends.data.DBConstants
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@Entity(tableName = DBConstants.FRIEND_TABLE)
+@Entity(tableName = "friend_table")
 data class Friend (
     @PrimaryKey
     val id: Int,
-    val firstName: String,
-    val lastName: String,
-    val photo: String,
+    val name: String,
+    val username: String,
+    val phone: String,
     @Embedded
-    val location: Location
+    val address: Address
 ) : Parcelable

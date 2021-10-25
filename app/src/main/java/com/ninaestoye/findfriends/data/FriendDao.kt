@@ -7,9 +7,9 @@ import com.ninaestoye.findfriends.model.Friend
 
 @Dao
 interface FriendDao {
-    @Query("SELECT * FROM DBConstants.FRIEND_TABLE")
+    @Query("SELECT * FROM friend_table")
     fun getAllFriends() : LiveData<List<Friend>>;
 
-    @Query("SELECT * FROM DBConstants.FRIEND_TABLE WHERE id = :id")
+    @Query("SELECT * FROM friend_table WHERE id = :id")
     fun getFriend(id: Int) : LiveData<Friend>;
 }

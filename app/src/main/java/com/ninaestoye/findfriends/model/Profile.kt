@@ -4,11 +4,10 @@ import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.ninaestoye.findfriends.data.DBConstants
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@Entity(tableName = DBConstants.PROFILE_TABLE)
+@Entity(tableName = "profile_table")
 data class Profile (
     @PrimaryKey
     val id: Int,
@@ -16,5 +15,5 @@ data class Profile (
     val lastName: String,
     val photo: String,
     @Embedded
-    val location: Location
+    val geo: Geo
 ) : Parcelable

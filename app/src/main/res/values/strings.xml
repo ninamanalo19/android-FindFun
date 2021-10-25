@@ -9,5 +9,6 @@
     <string name="list_distance_default">Friend is 300 km away from you.</string>
     <string name="list_distance">%1$s is %2$s %3$s away from you.</string>
     <string name="list_rating_default">4.0</string>
+    <string name="list_lat_lng">Lat: %1$s Lng: %2$s</string>
 
 </resources>
