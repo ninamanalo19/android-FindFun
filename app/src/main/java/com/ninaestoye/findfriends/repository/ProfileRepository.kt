@@ -1,9 +1,10 @@
 package com.ninaestoye.findfriends.repository
 
+import com.ninaestoye.findfriends.api.SimpleAPI
 import com.ninaestoye.findfriends.data.ProfileDao
 import com.ninaestoye.findfriends.model.Profile
 
-class ProfileRepository(private val profileDao: ProfileDao) {
+class ProfileRepository constructor(private val api: SimpleAPI, private val profileDao: ProfileDao) {
 
     val getAllProfiles = profileDao.getAllProfiles();
 

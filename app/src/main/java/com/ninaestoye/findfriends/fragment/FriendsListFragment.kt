@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,14 +17,18 @@ import com.ninaestoye.findfriends.adpater.FriendsListAdapter
 import com.ninaestoye.findfriends.databinding.FragmentFriendsListBinding
 import com.ninaestoye.findfriends.model.Friend
 import com.ninaestoye.findfriends.viewModel.FriendViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_friends_list.*
 import kotlinx.android.synthetic.main.fragment_friends_list.view.*
 
+@AndroidEntryPoint
 class FriendsListFragment : Fragment() {
+
+    val friendViewModel: FriendViewModel by viewModels(); // or activityViewModels() if you want to share with other fragments the instance of this view model
 
     private val TAG = FriendsListFragment::class.java.simpleName;
     private lateinit var adapter : FriendsListAdapter;
-    private lateinit var friendViewModel: FriendViewModel;
+
     private lateinit var binding : FragmentFriendsListBinding;
 
     override fun onCreateView(
@@ -33,7 +38,6 @@ class FriendsListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_friends_list, container, false);
         val view = binding.root;
-        friendViewModel = ViewModelProvider(this).get(FriendViewModel::class.java);
         adapter = FriendsListAdapter();
 
         val recyclerView = view.rvFriends;

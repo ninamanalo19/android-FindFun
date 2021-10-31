@@ -1,26 +1,25 @@
 package com.ninaestoye.findfriends.viewModel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ninaestoye.findfriends.data.FFDatabase
 import com.ninaestoye.findfriends.model.Friend
 import com.ninaestoye.findfriends.repository.FriendRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
+import javax.inject.Named
 
-class FriendViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class FriendViewModel @Inject constructor(private val friendRepository : FriendRepository, private @Named("auth_token") val token: String) : ViewModel() {
 
-    private val friendRepository : FriendRepository
     val fetchFriendResponse : MutableLiveData<Response<Friend>> = MutableLiveData();
     val fetchFriendsResponse : MutableLiveData<Response<List<Friend>>> = MutableLiveData();
     val getAllFriends: LiveData<List<Friend>>;
 
     init {
-        val friendDao = FFDatabase.getDatabase(application).friendDao();
-        friendRepository = FriendRepository(friendDao);
         getAllFriends = friendRepository.getAllFriends;
     }
 
