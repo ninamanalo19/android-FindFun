@@ -1,4 +1,4 @@
-package com.ninaestoye.findfriends.adpater
+package com.ninaestoye.findfriends.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
