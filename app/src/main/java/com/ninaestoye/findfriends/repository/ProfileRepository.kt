@@ -1,6 +1,6 @@
 package com.ninaestoye.findfriends.repository
 
-import com.ninaestoye.findfriends.api.SimpleAPI
+import com.ninaestoye.findfriends.network.SimpleAPI
 import com.ninaestoye.findfriends.data.ProfileDao
 import com.ninaestoye.findfriends.model.Profile
 
