@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ninaestoye.findfriends.R
 import com.ninaestoye.findfriends.adapter.FriendsListAdapter
 import com.ninaestoye.findfriends.databinding.FragmentFriendsListBinding
+import com.ninaestoye.findfriends.model.Friend
 import com.ninaestoye.findfriends.viewModel.FriendViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_friends_list.view.*
@@ -66,8 +67,8 @@ class FriendsListFragment : Fragment() {
         friendViewModel.fetchFriends();
         friendViewModel.fetchFriendsResponse.observe(viewLifecycleOwner, Observer { response ->
             if (response.isSuccessful) {
-                response.body()?.let { friends ->
-                    adapter.populateFriends(friends);
+                response.body()?.data?.let { friends ->
+                    adapter.populateFriends(friends as List<Friend>);
                 }
             }
         })

@@ -1,6 +1,7 @@
 package com.ninaestoye.findfriends.network
 
 import com.ninaestoye.findfriends.model.Friend
+import com.ninaestoye.findfriends.model.ListData
 import okhttp3.Call
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -13,5 +14,5 @@ interface SimpleAPI {
     suspend fun fetchFriend(@Path("id") id: Int): Response<Friend>;
 
     @GET("/data/v1/user?limit=10")
-    suspend fun fetchFriends() : Response<ResponseBody>;
+    suspend fun fetchFriends() : Response<ListData>;
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ninaestoye.findfriends.model.Friend
+import com.ninaestoye.findfriends.model.ListData
 import com.ninaestoye.findfriends.repository.FriendRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -19,7 +20,7 @@ class FriendViewModel @Inject constructor(private val friendRepository : FriendR
     private val TAG = FriendViewModel::class.simpleName;
 
     val fetchFriendResponse : MutableLiveData<Response<Friend>> = MutableLiveData();
-    val fetchFriendsResponse : MutableLiveData<Response<List<Friend>>> = MutableLiveData();
+    val fetchFriendsResponse : MutableLiveData<Response<ListData>> = MutableLiveData();
     val getAllFriends: LiveData<List<Friend>>;
 
     init {
@@ -40,8 +41,6 @@ class FriendViewModel @Inject constructor(private val friendRepository : FriendR
     fun fetchFriends() {
         viewModelScope.launch {
             val response = friendRepository.fetchFriends();
-            Log.d(TAG, "fetchFriends: response=${response}")
-            Log.d(TAG, "fetchFriends: response error=${response.errorBody().toString()}")
             fetchFriendsResponse.value = response;
         }
     }
