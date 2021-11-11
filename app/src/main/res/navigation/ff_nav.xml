@@ -3,28 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ff_nav"
-    app:startDestination="@id/friendsListFragment">
-
+    app:startDestination="@id/questionFragment">
     <fragment
-        android:id="@+id/friendFragment"
-        android:name="com.ninaestoye.findfriends.fragment.FriendFragment"
-        android:label="fragment_friend"
-        tools:layout="@layout/fragment_friend" />
-    <fragment
-        android:id="@+id/friendsListFragment"
-        android:name="com.ninaestoye.findfriends.fragment.FriendsListFragment"
-        android:label="fragment_friends_list"
-        tools:layout="@layout/fragment_friends_list" >
-        <action
-            android:id="@+id/actionFListToFMap"
-            app:destination="@id/friendsMapFragment" />
-        <action
-            android:id="@+id/actionFListToFriend"
-            app:destination="@id/friendFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/friendsMapFragment"
-        android:name="com.ninaestoye.findfriends.fragment.FriendsMapFragment"
-        android:label="fragment_friends_map"
-        tools:layout="@layout/fragment_friends_map" />
+        android:id="@+id/questionFragment"
+        android:name="com.ninaestoye.findfun.fragment.QuestionFragment"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" />
 </navigation>
