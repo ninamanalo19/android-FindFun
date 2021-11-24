@@ -18,6 +18,7 @@ class QuestionViewModel @Inject constructor(private val questionRepository: Ques
     
     //val fetchedQuestions : MutableLiveData<Response<QueryResponse>> = MutableLiveData();
     val getSavedQuestions : LiveData<List<Question>> = questionRepository.getSavedQuestions;
+    var currentIndex = 0;
 
     fun getQuestionsByCategory(amount: Int, category: Int, difficulty: String) {
         viewModelScope.launch {
@@ -32,6 +33,10 @@ class QuestionViewModel @Inject constructor(private val questionRepository: Ques
                 }
             }
         }
+    }
+
+    fun setCurrent(currentIndex: Int) {
+        this.currentIndex = currentIndex;
     }
 
 

@@ -32,6 +32,8 @@ object AppModule {
     @Singleton
     @Provides
     fun provideDatabase(application: MainApplication) : FFDatabase {
+
+
         return Room.databaseBuilder(
             application,
             FFDatabase::class.java,
