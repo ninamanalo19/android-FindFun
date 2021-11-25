@@ -10,6 +10,7 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.1890625" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1715" />
+        <entry key="app/src/main/res/drawable/gradient_answer.xml" value="0.148" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1715" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1715" />
         <entry key="app/src/main/res/layout/answer_row.xml" value="0.1" />

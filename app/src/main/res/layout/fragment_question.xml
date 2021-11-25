@@ -74,7 +74,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{question.question}" />
+                android:text="@{question.question}"
+                android:layout_marginBottom="@dimen/pd_24"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAnswers"
