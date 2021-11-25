@@ -9,6 +9,6 @@ My Android checklist for now:
 - [x] Navigation
 - [x] Retrofit
 - [ ] Safe Args (I already did before, but I'll try to sneak it in this project)
-- [ ] Data Binding via Adapter (I already did before, but I'll try to sneak it in this project)
+- [x] Data Binding via Adapter
 - [ ] Rows and Columns (Jetpack Compose)
 - [ ] Espresso Testing
