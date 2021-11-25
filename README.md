@@ -13,6 +13,7 @@ My Android checklist for now:
 - [ ] Rows and Columns (Jetpack Compose)
 - [ ] Espresso Testing
 
-Note: To those who are cloning my project (yes, I see you 👀), please let me know if there are things that I need to improve. I need some feedback, please! 😃 
+Note: To those who are cloning my project (yes, I see you 👀), please let me know if there are things that I need to improve. I need some feedback, please! 😃
+Also leave me a star, please? ⭐
 
 Copyright © 2021 Niña M. Estoye 
