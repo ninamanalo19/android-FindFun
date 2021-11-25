@@ -12,3 +12,7 @@ My Android checklist for now:
 - [x] Data Binding via Adapter
 - [ ] Rows and Columns (Jetpack Compose)
 - [ ] Espresso Testing
+
+Note: To those who are cloning my project (yes, I see you 👀), please let me know if there are things that I need to improve. I need some feedback, please! 😃 
+
+Copyright © 2021 Niña M. Estoye 
