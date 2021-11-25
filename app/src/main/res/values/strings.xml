@@ -12,5 +12,6 @@
     <string name="list_lat_lng">Lat: %1$s Lng: %2$s</string>
 
     <string name="current_question">%1$d/%2$d</string>
-    <string name="answer_in">Answer in %1$d%2$s</string>
+    <string name="answer_in">Answer in %1$d seconds</string>
+    <string name="times_up">Time\'s up</string>
 </resources>
