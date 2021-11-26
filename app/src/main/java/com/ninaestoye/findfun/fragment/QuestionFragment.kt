@@ -90,7 +90,6 @@ class QuestionFragment : Fragment() {
         answers.add(0, question.correct_answer);
         answers.shuffle();
         populateAnswers(answers);
-        questionViewModel.loadQuestionTimer();
         questionViewModel.currentTime.observe(viewLifecycleOwner) { currentTime ->
             val btnAnswer = binding.root.btnAnswer;
             if (currentTime > 0) {

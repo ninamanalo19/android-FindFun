@@ -10,22 +10,26 @@ import com.ninaestoye.findfun.model.Question
 import com.ninaestoye.findfun.repository.QuestionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.util.*
 import javax.inject.Inject
 import javax.inject.Named
-import kotlin.concurrent.timerTask
 
 @HiltViewModel
 class QuestionViewModel @Inject constructor(private val questionRepository: QuestionRepository, private @Named("auth_token") val token: String) : ViewModel() {
 
     private val TAG = QuestionViewModel::class.simpleName;
-    private val TIME_OUT: Long = 10; // 10 SECS
+    private val TIME_OUT: Long = 30; // 10 SECS
     private val ONE_SECOND: Long = 1000;
+    private lateinit var timer: CountDownTimer;
     
     //val fetchedQuestions : MutableLiveData<Response<QueryResponse>> = MutableLiveData();
     val getSavedQuestions : LiveData<List<Question>> = questionRepository.getSavedQuestions;
     var currentIndex = 0;
     var currentTime : MutableLiveData<Long> = MutableLiveData();
+    
+    init {
+        Log.d(TAG, "init: start timer");
+        setCurrent(0);
+    }
 
     fun getQuestionsByCategory(amount: Int, category: Int, difficulty: String) {
         viewModelScope.launch {
@@ -43,18 +47,24 @@ class QuestionViewModel @Inject constructor(private val questionRepository: Ques
     }
 
     fun setCurrent(currentIndex: Int) {
+        Log.d(TAG, "setCurrent: currentIndex=${currentIndex}")
         this.currentIndex = currentIndex;
+        loadQuestionTimer();
     }
 
     private fun resetTime() {
-        viewModelScope.launch {
-            currentTime.value = TIME_OUT;
+        if (::timer.isInitialized) {
+            timer.cancel();
+            viewModelScope.launch {
+                currentTime.value = TIME_OUT;
+            }
         }
     }
 
     fun loadQuestionTimer() {
+        Log.d(TAG, "loadQuestionTimer: called ..");
         resetTime();
-        val t = object : CountDownTimer(ONE_SECOND * TIME_OUT, ONE_SECOND) {
+        timer = object : CountDownTimer(ONE_SECOND * TIME_OUT, ONE_SECOND) {
             override fun onTick(p0: Long) {
                 viewModelScope.launch {
                     currentTime.value = p0/ONE_SECOND;
@@ -65,6 +75,11 @@ class QuestionViewModel @Inject constructor(private val questionRepository: Ques
 
             }
         }
-        t.start();
+        timer.start();
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        resetTime();
     }
 }
