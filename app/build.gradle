@@ -66,6 +66,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     implementation 'androidx.room:room-runtime:2.3.0'
+    testImplementation 'junit:junit:4.12'
     kapt 'androidx.room:room-compiler:2.3.0'
     implementation 'androidx.room:room-ktx:2.3.0'
     androidTestImplementation 'androidx.room:room-testing:2.3.0'
@@ -80,7 +81,9 @@ dependencies {
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:core:1.4.0'
+    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.3'
 }
 
 kapt {

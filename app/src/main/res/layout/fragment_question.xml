@@ -25,78 +25,75 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/pd_16">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/list_photo_size"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
-                <TextView
-                    android:id="@+id/tvCategory"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{question.category}" />
-                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/list_photo_size"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+                        <TextView
+                            android:id="@+id/tvCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{question.category}" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{@string/current_question(current, total)}"/>
+                    </LinearLayout>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgUser"
+                        android:layout_width="@dimen/list_photo_size"
+                        android:layout_height="@dimen/list_photo_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{@string/current_question(current, total)}"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{question.question}"
+                        android:layout_marginBottom="@dimen/pd_24"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAnswers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        />
+                </LinearLayout>
             </LinearLayout>
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgUser"
-                android:layout_width="@dimen/list_photo_size"
-                android:layout_height="@dimen/list_photo_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{question.question}"
-                android:layout_marginBottom="@dimen/pd_24"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvAnswers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                />
-
-        </LinearLayout>
-        <LinearLayout
+        </ScrollView>
+        <Button
+            android:id="@+id/btnAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:contentDescription="@string/answer_in"
+            android:text="@{@string/answer_in(time)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <Button
-                android:id="@+id/btnAnswer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/answer_in"
-                android:text="@{@string/answer_in(time)}" />
-
-        </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

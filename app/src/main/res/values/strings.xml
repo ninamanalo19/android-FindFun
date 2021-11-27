@@ -14,4 +14,13 @@
     <string name="current_question">%1$d/%2$d</string>
     <string name="answer_in">Answer in %1$d seconds</string>
     <string name="times_up">Time\'s up</string>
+
+    <string name="text_next">Next</string>
+    <string name="text_start">Start</string>
+    <string name="text_next_fragment">Next fragment</string>
+    <string name="text_next_activity">Next Activity</string>
+    <string name="text_secondary_fragment">This is Secondary Fragment</string>
+    <string name="text_mainactivity">MainActivity</string>
+    <string name="text_back">Back</string>
+    <string name="text_secondaryactivity">SecondaryActivity</string>
 </resources>
