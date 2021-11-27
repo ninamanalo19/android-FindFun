@@ -10,8 +10,8 @@ My Android checklist for now:
 - [x] Retrofit
 - [ ] Safe Args (I already did before, but I'll try to sneak it in this project)
 - [x] Data Binding via Adapter
-- [ ] Rows and Columns (Jetpack Compose)
-- [ ] Espresso Testing
+- [ ] Composables
+- [ ] Espresso Testing 🚧 
 
 Note: To those who are cloning my project (yes, I see you 👀), please let me know if there are things that I need to improve. I need some feedback, please! 😃
 Also leave me a star, please? ⭐
