@@ -6,6 +6,8 @@
 
     <data>
         <import type="com.ninaestoye.findfun.model.Question"/>
+        <import type="android.text.Html"/>
+        <import type="android.text.TextUtils"/>
         <variable
             name="question"
             type="Question" />
@@ -71,7 +73,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{question.question}"
+                android:text="@{TextUtils.isEmpty(question.question) ? null : Html.fromHtml(question.question)}"
                 android:layout_marginBottom="@dimen/pd_24"/>
 
             <androidx.recyclerview.widget.RecyclerView
